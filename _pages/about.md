@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitlea: Student at KAIST, advised by Prof. Juho Lee.
+subtitlea: / 
 
 profile:
   align: right
@@ -10,17 +10,17 @@ profile:
   image_circular: false # crops the image to make it circular
   address: >
 
-news: false  # includes a list of news items
+news: true  # includes a list of news items
 latest_posts: false  # includes a list of the newest posts
-selected_papers: false # includes a list of papers marked as "selected={true}"
+selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
+Hi, I am a Master student at KAIST advised by Professor [Juho Lee](https://juho-lee.github.io/).
 
-**Research Interest**: My research interest lies in the probabilistic modeling and exploring its application across diverse domains. Drawing inspiration from mathematical and statistical developments like
-- **Bayesian Statistics**
-- **Sequential Monte Carlo**
-- **Stochasic Differential Equation**
+**Research Interest**: My research interest lies in the probabilistic modeling and exploring its application across diverse domains. By establishing links between these frameworks and their practical implementations in the domains of machine learning, I aim to contribute to the advancement of these fields.
+
+- **Generative Models**
+- **State Space Models**
+- **Variational Inference**
 - **Stochastic Optimal Control**
-
-By establishing links between these frameworks and their practical implementations in the domains of machine learning and artificial intelligence (ML/AI), I aim to contribute to the advancement of these fields.
