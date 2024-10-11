@@ -112,7 +112,7 @@
         {% if entry.type == "article" -%}
         {%- capture entrytype -%}
           <em>{{ entry.journal }}</em>
-          {%- if entry.journal_1 != "" -%}, <em>{{ entry.journal_1 }}</em>{%- endif -%}
+          {%- if entry.journal_1 != "" -%} <em>{{ entry.journal_1 }}</em>{%- endif -%}
         {%- endcapture -%}
         {%- elsif proceedings contains entry.type -%}
           {%- capture entrytype -%} <em>In {{entry.booktitle}} </em>  {%- endcapture -%}
@@ -125,9 +125,9 @@
           {%- capture entrymonth -%}{{ " " }}{{ entry.month | capitalize }}{%- endcapture -%}
         {%- endif -%}
 
-        {%- if entry.year -%}
+        <!-- {%- if entry.year -%}
           {%- capture entryyear -%}{{ " " }}{{entry.year}}{%- endcapture -%}
-        {%- endif -%}
+        {%- endif -%} -->
         {% assign entrytype_text = entrytype | strip_html | strip %}
         {%- capture periodical -%}{{ entrytype }}{%- if entrytype_text != "" and entryyear != "" -%}, {%- endif -%}{{ entrymonth }}{{ entryyear }}{%- endcapture -%}
         <div class="periodical">
