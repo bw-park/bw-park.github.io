@@ -2,8 +2,8 @@
 layout: about
 title: about
 permalink: /
-subtitle: |+
-  Master student @ KAIST
+subtitle: >
+Master student @ KAIST
 profile:
   align: right
   image: bwpark.jpg
