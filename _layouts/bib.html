@@ -23,8 +23,6 @@
           {%- else -%}
             <abbr class="badge">{{entry.abbr}}</abbr>
           {%- endif -%}
-          {%- if entry.award -%}
-          <span class="award badge">{{entry.award}}</span>
         {%- endif -%}
         </div>
 
@@ -140,6 +138,11 @@
           {%- capture entryselected -%} <em> {" "}{{entry.selected}} </em> {{entry.selected}}{%- endcapture -%}
         {%- endif -%}
 
+          {%- if entry.honor -%}
+          <span class="honor">
+            {{entry.honor}}
+          </span>
+          {%- endif -%}
 
           <!-- Links/Buttons -->
           <div class="links">
