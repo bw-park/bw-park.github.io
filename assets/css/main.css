@@ -597,6 +597,10 @@ footer.sticky-bottom {
   color: var(--global-theme-color) !important;
   border: 1px solid var(--global-theme-color);
 }
+.publications ol.bibliography li .honor {
+  color: var(--global-theme-color);
+  font-weight: bolder;
+}
 .publications ol.bibliography li .title {
   font-weight: bolder;
 }
