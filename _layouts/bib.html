@@ -112,6 +112,11 @@
         {% if entry.type == "article" -%}
         {%- capture entrytype -%}
           <em>{{ entry.journal }}</em>
+          {%- if entry.honor -%}
+          <span class="honor">
+            {{entry.honor}}
+          </span>
+          {%- endif -%}
           {%- if entry.journal_1 != "" -%}<br><em>{{ entry.journal_1 }}</em>{%- endif -%}
         {%- endcapture -%}
         {%- elsif proceedings contains entry.type -%}
@@ -137,12 +142,6 @@
         {%- if entry.selected -%}
           {%- capture entryselected -%} <em> {" "}{{entry.selected}} </em> {{entry.selected}}{%- endcapture -%}
         {%- endif -%}
-
-          {%- if entry.honor -%}
-          <span class="honor">
-            {{entry.honor}}
-          </span>
-          {%- endif -%}
 
           <!-- Links/Buttons -->
           <div class="links">
