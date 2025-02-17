@@ -112,10 +112,11 @@
         {% if entry.type == "article" -%}
         {%- capture entrytype -%}
           <em>{{ entry.journal }}</em>
-          {%- if entry.honor -%}
+          {%- if entry.honor != "" -%}<br><em>
           <span class="honor">
             {{entry.honor}}
           </span>
+          </em>
           {%- endif -%}
           {%- if entry.journal_1 != "" -%}<br><em>{{ entry.journal_1 }}</em>{%- endif -%}
         {%- endcapture -%}
