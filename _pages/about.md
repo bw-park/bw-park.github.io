@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: pronounced like [[bjʌŋ-u]](https://ipa-reader.com/?text=bj%CA%8C%C5%8B-u&voice=Joanna).
+subtitle: Master student @ KAIST
 profile:
   align: right
   image: bwpark.jpg
