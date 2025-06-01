@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://bw-park.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bw-park.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-01T08:10:50+00:00</updated><id>https://bw-park.github.io/feed.xml</id><title type="html">Byoungwoo Park</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://bw-park.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bw-park.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-01T08:18:20+00:00</updated><id>https://bw-park.github.io/feed.xml</id><title type="html">Byoungwoo Park</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">AI810 Blog Post (20243313)</title><link href="https://bw-park.github.io/2025/05/30/FSB.html" rel="alternate" type="text/html" title="AI810 Blog Post (20243313)" /><published>2025-05-30T15:12:00+00:00</published><updated>2025-05-30T15:12:00+00:00</updated><id>https://bw-park.github.io/2025/05/30/FSB</id><content type="html" xml:base="https://bw-park.github.io/2025/05/30/FSB.html"><![CDATA[<d-contents>
 
   <nav class="l-text figcaption">
   <h3>Contents</h3>
     <div><a href="#introduction"> Introduction </a></div>
-    <div><a href="#Infinite-dimensional SDEs">Infinite-dimensional SDEs</a></div>
-    <div><a href="#Infinite-dimensional Diffusion Models">Infinite-dimensional Diffusion Models</a></div>
-
+    <div><a href="#infinite-dimensional SDEs">Infinite-dimensional SDEs</a></div>
+    <div><a href="#infinite-dimensional Diffusion Models">Infinite-dimensional Diffusion Models</a></div>
+    <div><a href="#infinite-Dimensional Molecule Conformal Generation">Infinite-Dimensional Molecule Conformal Generation</a></div>
     <div><a href="#concluding-remarks">Concluding remarks</a></div>      
   </nav>
 </d-contents>
@@ -70,11 +70,9 @@ The covariance operator $Q$ plays a crucial theoretical role in infinite-dimensi
 <p>To numerically simulate infinite-dimensional SDEs, particularly those driven by negative Laplacian operators \(-\Delta\), one often employs spectral decompositions.
 Specifically, for a two-dimensional domain \(x = (x_1, x_2) \in \mathbb{R}^2\), eigenfunctions \(\phi^{(k)}(x)\) and eigenvalues \(\lambda^{(k)}\) of \(-\Delta\) under zero Neumann boundary conditions satisfy:</p>
 
-<p>&amp;&amp;
-\begin{equation}
-    -\Delta \phi^{(k)}(\mathbf{x}) = \lambda^{(k)} \phi^{(k)}(\mathbf{x}), \quad \frac{\partial \phi^{(k)}(\mathbf{x})}{\partial x_1} = \frac{\partial \phi^{(k)}(\mathbf{x})}{\partial x_2} = 0.
-\end{equation}
-&amp;&amp;</p>
+\[\begin{equation}
+  -\Delta \phi^{(k)}(\mathbf{x}) = \lambda^{(k)} \phi^{(k)}(\mathbf{x}), \quad \frac{\partial \phi^{(k)}(\mathbf{x})}{\partial x_1} = \frac{\partial \phi^{(k)}(\mathbf{x})}{\partial x_2} = 0.
+\end{equation}\]
 
 <p>On a rectangular domain, these eigenfunctions form a separable cosine basis:</p>
 
@@ -105,12 +103,29 @@ Specifically, for a two-dimensional domain \(x = (x_1, x_2) \in \mathbb{R}^2\), 
 <div class="row l-body">
 	<div class="col-sm">
 	  <img class="img-fluid rounded z-depth-1" src="/assets/img/publication_preview/cat2wild_64.gif" />
-   <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px;"> Results on Unpaired image transfer task.). </figcaption>
+   <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px;"> Results on Unpaired image transfer task. </figcaption>
 	</div>
 	<div class="col-sm">
   <img class="img-fluid rounded z-depth-1" src="/assets/img/publication_preview/cat2wild_128.gif" />
    <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px">Red boxed images were upsampled (using bi-linear transformation) from
 the observed resolution. </figcaption>
+  </div>
+</div>
+
+<h2 id="infinite-dimensional-molecule-conformal-generation">Infinite-Dimensional Molecule Conformal Generation</h2>
+
+<d-cite key="wang2024swallowing"></d-cite>
+
+<div class="row l-body">
+	<div class="col-sm">
+	  <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/traj_drugs.gif" />
+   <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px;"> Drug generation Traj<d-cite key="wang2024swallowing"></d-cite>
+. </figcaption>
+	</div>
+	<div class="col-sm">
+  <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/traj_xl.gif" />
+   <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px">Drug generation Traj<d-cite key="wang2024swallowing"></d-cite>
+. </figcaption>
   </div>
 </div>
 

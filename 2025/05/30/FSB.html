@@ -174,9 +174,9 @@
   <nav class="l-text figcaption">
   <h3>Contents</h3>
     <div><a href="#introduction"> Introduction </a></div>
-    <div><a href="#Infinite-dimensional%20SDEs">Infinite-dimensional SDEs</a></div>
-    <div><a href="#Infinite-dimensional%20Diffusion%20Models">Infinite-dimensional Diffusion Models</a></div>
-
+    <div><a href="#infinite-dimensional%20SDEs">Infinite-dimensional SDEs</a></div>
+    <div><a href="#infinite-dimensional%20Diffusion%20Models">Infinite-dimensional Diffusion Models</a></div>
+    <div><a href="#infinite-Dimensional%20Molecule%20Conformal%20Generation">Infinite-Dimensional Molecule Conformal Generation</a></div>
     <div><a href="#concluding-remarks">Concluding remarks</a></div>      
   </nav>
 </d-contents>
@@ -244,11 +244,9 @@ The covariance operator $Q$ plays a crucial theoretical role in infinite-dimensi
 <p>To numerically simulate infinite-dimensional SDEs, particularly those driven by negative Laplacian operators \(-\Delta\), one often employs spectral decompositions.
 Specifically, for a two-dimensional domain \(x = (x_1, x_2) \in \mathbb{R}^2\), eigenfunctions \(\phi^{(k)}(x)\) and eigenvalues \(\lambda^{(k)}\) of \(-\Delta\) under zero Neumann boundary conditions satisfy:</p>
 
-<p>&amp;&amp;
-\begin{equation}
-    -\Delta \phi^{(k)}(\mathbf{x}) = \lambda^{(k)} \phi^{(k)}(\mathbf{x}), \quad \frac{\partial \phi^{(k)}(\mathbf{x})}{\partial x_1} = \frac{\partial \phi^{(k)}(\mathbf{x})}{\partial x_2} = 0.
-\end{equation}
-&amp;&amp;</p>
+\[\begin{equation}
+  -\Delta \phi^{(k)}(\mathbf{x}) = \lambda^{(k)} \phi^{(k)}(\mathbf{x}), \quad \frac{\partial \phi^{(k)}(\mathbf{x})}{\partial x_1} = \frac{\partial \phi^{(k)}(\mathbf{x})}{\partial x_2} = 0.
+\end{equation}\]
 
 <p>On a rectangular domain, these eigenfunctions form a separable cosine basis:</p>
 
@@ -279,12 +277,29 @@ Specifically, for a two-dimensional domain \(x = (x_1, x_2) \in \mathbb{R}^2\), 
 <div class="row l-body">
 	<div class="col-sm">
 	  <img class="img-fluid rounded z-depth-1" src="/assets/img/publication_preview/cat2wild_64.gif">
-   <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px;"> Results on Unpaired image transfer task.). </figcaption>
+   <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px;"> Results on Unpaired image transfer task. </figcaption>
 	</div>
 	<div class="col-sm">
   <img class="img-fluid rounded z-depth-1" src="/assets/img/publication_preview/cat2wild_128.gif">
    <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px">Red boxed images were upsampled (using bi-linear transformation) from
 the observed resolution. </figcaption>
+  </div>
+</div>
+
+<h2 id="infinite-dimensional-molecule-conformal-generation">Infinite-Dimensional Molecule Conformal Generation</h2>
+
+<d-cite key="wang2024swallowing"></d-cite>
+
+<div class="row l-body">
+	<div class="col-sm">
+	  <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/traj_drugs.gif">
+   <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px;"> Drug generation Traj<d-cite key="wang2024swallowing"></d-cite>
+. </figcaption>
+	</div>
+	<div class="col-sm">
+  <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/traj_xl.gif">
+   <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px">Drug generation Traj<d-cite key="wang2024swallowing"></d-cite>
+. </figcaption>
   </div>
 </div>
 
