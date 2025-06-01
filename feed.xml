@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://bw-park.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bw-park.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-01T08:33:31+00:00</updated><id>https://bw-park.github.io/feed.xml</id><title type="html">Byoungwoo Park</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://bw-park.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bw-park.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-01T08:50:42+00:00</updated><id>https://bw-park.github.io/feed.xml</id><title type="html">Byoungwoo Park</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">AI810 Blog Post (20243313)</title><link href="https://bw-park.github.io/2025/05/30/FSB.html" rel="alternate" type="text/html" title="AI810 Blog Post (20243313)" /><published>2025-05-30T15:12:00+00:00</published><updated>2025-05-30T15:12:00+00:00</updated><id>https://bw-park.github.io/2025/05/30/FSB</id><content type="html" xml:base="https://bw-park.github.io/2025/05/30/FSB.html"><![CDATA[<d-contents>
 
   <nav class="l-text figcaption">
@@ -132,9 +132,9 @@ the observed resolution. </figcaption>
 <table>
   <tbody>
     <tr>
-      <td>Specifically, let \(G = (V, E)\) be the molecular graph with $$n =</td>
+      <td>Specifically, let G = (V, E) be the molecular graph with n =</td>
       <td>V</td>
-      <td>\(atoms, and let\)L\(be its graph Laplacian. Owing to the symmetry of\)L\(, its eigenvectors\){\phi_k}_{k=1}^n\(form an orthonormal basis of\)\mathbb{R}^n\(. Any molecular conformation\)X \in \mathbb{R}^{n \times 3}$$ (i.e., positions of $n$ atoms in 3D space) can be decomposed as:</td>
+      <td>atoms, and let L be its graph Laplacian. Owing to the symmetry of L, its eigenvectors \({\phi_k}_{k=1}^n\) form an orthonormal basis of \(\mathbb{R}^n\). Any molecular conformation \(X \in \mathbb{R}^{n \times 3}\) (i.e., positions of \(n\) atoms in 3D space) can be decomposed as:</td>
     </tr>
   </tbody>
 </table>
@@ -151,7 +151,7 @@ the observed resolution. </figcaption>
 <p>Moreover, function-space formulations naturally extend this idea by representing conformers not as fixed atom positions, but as fields over the molecular graph. For example, <d-cite key="wang2024swallowing"></d-cite> show that continuous evaluation of conformers is possible by interpolating eigenfunction representations. For a point \(p\) along a bond between atoms \(v_i\) and \(v_j\), the representation is interpolated as:</p>
 
 <p>\(\begin{equation}
-  \phi(p) = \alpha \phi(v_i) _ (1-\alpha) \pho(v_j), \quad \alpha \in [0, 1],
+  \phi(p) = \alpha \phi(v_i) _ (1-\alpha) \phi(v_j), \quad \alpha \in [0, 1],
 \end{equation}\)
 and the model maps \(\phi(p)\) to a 3D coordinate. This enables continuous evaluation of conformers across the molecular graph, even at locations not seen during training.</p>
 
@@ -159,7 +159,17 @@ and the model maps \(\phi(p)\) to a 3D coordinate. This enables continuous evalu
 
 <p><strong>Practical Limitation.</strong></p>
 
-<h2 id="concluding-remarks">Concluding remarks</h2>]]></content><author><name>Byoungwoo Park</name></author><summary type="html"><![CDATA[1]]></summary></entry><entry><title type="html">AI810 Blog Post (20238188)</title><link href="https://bw-park.github.io/2025/05/30/geo.html" rel="alternate" type="text/html" title="AI810 Blog Post (20238188)" /><published>2025-05-30T15:12:00+00:00</published><updated>2025-05-30T15:12:00+00:00</updated><id>https://bw-park.github.io/2025/05/30/geo</id><content type="html" xml:base="https://bw-park.github.io/2025/05/30/geo.html"><![CDATA[<d-contents>
+<p>Despite these promising advances, there are key limitations when applying function-space SB to molecular data. The central issue lies in the fact that each molecular graph defines its own graph Laplacian, and consequently, its own eigenbasis. This means that molecular conformers are embedded in non-aligned spectral coordinates across different samples. To apply simulation techniques (e.g., diffusion or SB in coefficient space), one would ideally need a shared basis across the dataset—but aligning or transferring conformers between mismatched bases is fundamentally ill-posed or at least highly nontrivial.</p>
+
+<p>One workaround is to embed all molecules into a fixed-size global basis (e.g., using graph matching or kernelized embeddings), but such methods risk losing molecule-specific structural information. This highlights a tension: while infinite-dimensional modeling leverages smoothness and resolution-free behavior, its assumptions clash with the heterogeneity of molecular graph structures. Bridging this gap—through universal spectral embeddings, learned graph bases, or implicit function representations—remains a crucial open challenge for scalable and generalizable molecular generative models.</p>
+
+<h2 id="concluding-remarks">Concluding remarks</h2>
+
+<p>Function-space generative modeling provides a powerful and principled framework for modeling structured data, enabling resolution-free, smooth, and domain-aware generation. By casting data as continuous functions over space or graphs, these models unify interpolation, uncertainty quantification, and conditioning into a single representation. This approach has shown strong potential across regular domains like images and continuous time-series, and more recently, irregular domains like molecular graphs.</p>
+
+<p>However, applying infinite-dimensional Schr”odinger Bridge (SB) formulations to molecular conformer generation introduces unique challenges due to the graph-specific spectral decompositions. Unlike regular grids, molecular graphs do not share a common coordinate system, making model transferability and simulation coherence nontrivial. Recent works such as \citet{wang2024swallowing} and \citet{lee2024disco} have made substantial progress by exploiting informative priors and leveraging interpolable eigenfunctions, but general-purpose, scalable solutions remain elusive.</p>
+
+<p>Going forward, overcoming the mismatch of graph-specific eigenbases, incorporating physical constraints like bond flexibility or quantum observables, and developing architectures that natively handle variable graph topologies will be key. Combining these insights with the expressive power of SB and function-space modeling could lead to a new generation of molecular generative models that are not only accurate, but also chemically meaningful, generalizable, and physically grounded.</p>]]></content><author><name>Byoungwoo Park</name></author><summary type="html"><![CDATA[Function-space generative modeling offers a resolution-free and geometrically flexible approach to data generation by treating data as infinite-dimensional functions rather than fixed-dimensional vectors. When applied to molecular conformer generation, this framework enables modeling of 3D molecular structures as smooth fields over graph domains. Recent advances have extended diffusion and Schrödinger Bridge (SB) models into function space, allowing principled interpolation between data distributions. Notably, these methods support unpaired generation and conditioning on informative priors—e.g., initializing with RDKit geometries—improving sample quality in structured domains. However, molecules pose unique challenges due to their graph-specific Laplacians, which yield distinct eigenbases for each sample, complicating coherent simulation and transfer. This work outlines the theoretical foundation of infinite-dimensional SDEs, highlights recent progress in function-space molecular generation, and identifies key limitations and future directions—particularly the need for shared or learnable spectral embeddings to enable scalable and generalizable SB-based generative models for molecules.]]></summary></entry><entry><title type="html">AI810 Blog Post (20238188)</title><link href="https://bw-park.github.io/2025/05/30/geo.html" rel="alternate" type="text/html" title="AI810 Blog Post (20238188)" /><published>2025-05-30T15:12:00+00:00</published><updated>2025-05-30T15:12:00+00:00</updated><id>https://bw-park.github.io/2025/05/30/geo</id><content type="html" xml:base="https://bw-park.github.io/2025/05/30/geo.html"><![CDATA[<d-contents>
 
   <nav class="l-text figcaption">
   <h3>Contents</h3>
