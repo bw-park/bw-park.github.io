@@ -219,25 +219,33 @@
 
 <h2 id="infinite-dimensional-diffusion-models">Infinite-dimensional Diffusion Models</h2>
 
-<p>\section{Infinite-dimensional SDEs}</p>
+<p>In traditional finite-dimensional settings, a stochastic differential equation (SDE) in \(\mathbb{R}^d\) is typically expressed as:
+\(\begin{equation}
+dX_t = f(t,X_t)\,dt + \sigma(t,X_t)\,dW_t,
+\end{equation}\)</p>
 
-<p>In traditional finite-dimensional settings, a stochastic differential equation (SDE) in $\mathbb{R}^d$ is typically expressed as:
-\(dX_t = f(t,X_t)\,dt + \sigma(t,X_t)\,dW_t,\)
-where $W_t$ is a standard Wiener process. Extending this formulation to infinite-dimensional spaces involves defining SDEs in Hilbert spaces:
-\(dX_t = AX_t\,dt + \sigma\,dW_t^Q,\quad X_0 \in H,\)</p>
+<p>where \(W_t\) is a standard Wiener process. Extending this formulation to infinite-dimensional spaces involves defining SDEs in Hilbert spaces:</p>
 
-<p>where:
-\begin{itemize}
-    \item $H$ is an infinite-dimensional Hilbert space,
-    \item $A : H \to H$ is typically an unbounded linear operator,
-    \item $W_t^Q$ is a $Q$-Wiener process, a generalization of the finite-dimensional Wiener process with covariance operator $Q$ reflecting spatial correlations inherent in infinite-dimensional spaces.
-\end{itemize}</p>
+\[\begin{equation}
+dX_t = AX_t\,dt + \sigma\,dW_t^Q,\quad X_0 \in H,
+\end{equation}\]
 
-<p>Specifically, a $Q$-Wiener process can be expanded via an eigenbasis of the Hilbert space $H$:
-\(W_t^Q = \sum_{k=1}^{\infty} Q^{1/2}\phi_k\, w_t^{(k)},\)
-where \(\{\phi_k\}\) forms an orthonormal basis of $H$ and \(w_t^{(k)}\) are independent scalar Wiener processes. The covariance operator \(Q\) determines spatial correlation and smoothness properties of the stochastic process. Unlike finite-dimensional spaces where identity covariance operators suffice, in infinite-dimensional spaces, the identity operator is typically not trace-class, necessitating a carefully chosen covariance operator $Q$ to ensure mathematical and physical relevance.</p>
+<p>where:</p>
+<ul>
+  <li>*\(H\) is an infinite-dimensional Hilbert space,</li>
+  <li>\(A : H \to H\) is typically an unbounded linear operator,</li>
+  <li>\(W_t^Q\) is a \(Q\)-Wiener process, a generalization of the finite-dimensional Wiener process with covariance operator $Q$ reflecting spatial correlations inherent in infinite-dimensional spaces.</li>
+</ul>
 
-<p>\paragraph{Role of $Q$:} 
+<p>Specifically, a $Q$-Wiener process can be expanded via an eigenbasis of the Hilbert space \(H\):</p>
+
+\[\begin{equation}
+W_t^Q = \sum_{k=1}^{\infty} Q^{1/2}\phi_k\, w_t^{(k)},
+\end{equation}\]
+
+<p>where \(\{\phi_k\}\) forms an orthonormal basis of $H$ and \(w_t^{(k)}\) are independent scalar Wiener processes. The covariance operator \(Q\) determines spatial correlation and smoothness properties of the stochastic process. Unlike finite-dimensional spaces where identity covariance operators suffice, in infinite-dimensional spaces, the identity operator is typically not trace-class, necessitating a carefully chosen covariance operator $Q$ to ensure mathematical and physical relevance.</p>
+
+<p><strong>Role of \(Q\):</strong> 
 The covariance operator $Q$ plays a crucial theoretical role in infinite-dimensional SDEs by ensuring the stochastic increments have finite trace and appropriately reflect spatial correlations. It defines the regularity and correlation structure of the infinite-dimensional noise, making $Q$ essential for well-posedness and tractability of the SDE in infinite-dimensional spaces.</p>
 
 <h2 id="infinite-dimensional-diffusion-models-1">Infinite-dimensional Diffusion Models</h2>
