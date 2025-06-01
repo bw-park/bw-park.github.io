@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://bw-park.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bw-park.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-01T08:50:42+00:00</updated><id>https://bw-park.github.io/feed.xml</id><title type="html">Byoungwoo Park</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://bw-park.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bw-park.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-01T08:54:49+00:00</updated><id>https://bw-park.github.io/feed.xml</id><title type="html">Byoungwoo Park</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">AI810 Blog Post (20243313)</title><link href="https://bw-park.github.io/2025/05/30/FSB.html" rel="alternate" type="text/html" title="AI810 Blog Post (20243313)" /><published>2025-05-30T15:12:00+00:00</published><updated>2025-05-30T15:12:00+00:00</updated><id>https://bw-park.github.io/2025/05/30/FSB</id><content type="html" xml:base="https://bw-park.github.io/2025/05/30/FSB.html"><![CDATA[<d-contents>
 
   <nav class="l-text figcaption">
@@ -116,19 +116,6 @@ the observed resolution. </figcaption>
 
 <p>Recent work by<d-cite key="wang2024swallowing"></d-cite>introduces a principled framework for molecular conformer generation in function space by leveraging spectral methods defined over molecular graphs. The key insight is that a molecular conformer—the 3D arrangement of atoms in a molecule—can be represented as a smooth function over the molecular graph.</p>
 
-<div class="row l-body">
-	<div class="col-sm">
-	  <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/traj_drugs.gif" />
-   <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px;"> Drug generation Traj<d-cite key="wang2024swallowing"></d-cite>
-. </figcaption>
-	</div>
-	<div class="col-sm">
-  <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/traj_xl.gif" />
-   <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px">Drug generation Traj<d-cite key="wang2024swallowing"></d-cite>
-. </figcaption>
-  </div>
-</div>
-
 <table>
   <tbody>
     <tr>
@@ -145,6 +132,17 @@ the observed resolution. </figcaption>
 
 <p>where each coefficient $c_k$ captures the projection of the molecular geometry onto the $k$-th graph harmonic. This decomposition allows modeling conformers in the frequency domain rather than Cartesian coordinates. This spectral parameterization enables generative models to operate on coefficients \({c_k}\), which typically exhibit spatial smoothness and decay, allowing for compact representations. Furthermore, the conformer can be generated in function space via a diffusion process over these coefficients. This formulation enables the application of infinite-dimensional generative models and Schrödinger Bridge methods in graph-based domains. Importantly, since the graph Laplacian is molecule-specific, each sample is embedded in its own basis. Addressing this heterogeneity remains a key challenge for extending function-space models to general molecular datasets.</p>
 
+<div class="row l-body">
+	<div class="col-sm">
+	  <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/traj_drugs.gif" />
+   <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px;"> Drug generation Traj<d-cite key="wang2024swallowing"></d-cite>. </figcaption>
+	</div>
+	<div class="col-sm">
+  <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/traj_xl.gif" />
+   <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px">Drug generation Traj<d-cite key="wang2024swallowing"></d-cite>. </figcaption>
+  </div>
+</div>
+
 <p><strong>SB with informative priors and continuous conformers.</strong>
  The Schr”odinger Bridge (SB). framework allows generation from an initial distribution to a target distribution while remaining close to a reference process. Traditionally, generative models using SB or diffusion start from pure noise; however, this may be suboptimal in structured domains like molecular conformers. A more informative prior can improve generation quality and convergence. For instance, <d-cite key="lee2024disco"></d-cite> initialize the generation with conformers produced by RDKit, enabling a guided generation path that improves sample quality and optimization. This strategy suggests that SB methods can generalize such priors in a principled way, bridging between known or heuristically sampled initial configurations and optimized final geometries.</p>
 
@@ -157,9 +155,8 @@ and the model maps \(\phi(p)\) to a 3D coordinate. This enables continuous evalu
 
 <p>This formulation not only confirms the flexibility of the field-based approach, but also indicates potential extensions toward richer physical modeling. For example, if the input includes electronic density estimates or quantum observables (e.g., from QMC methods), the model may predict physically meaningful fields beyond atomic coordinates. These directions remain speculative but open compelling future paths for conformer field learning and molecule-level Schr”odinger Bridge extensions.</p>
 
-<p><strong>Practical Limitation.</strong></p>
-
-<p>Despite these promising advances, there are key limitations when applying function-space SB to molecular data. The central issue lies in the fact that each molecular graph defines its own graph Laplacian, and consequently, its own eigenbasis. This means that molecular conformers are embedded in non-aligned spectral coordinates across different samples. To apply simulation techniques (e.g., diffusion or SB in coefficient space), one would ideally need a shared basis across the dataset—but aligning or transferring conformers between mismatched bases is fundamentally ill-posed or at least highly nontrivial.</p>
+<p><strong>Practical Limitation.</strong>
+Despite these promising advances, there are key limitations when applying function-space SB to molecular data. The central issue lies in the fact that each molecular graph defines its own graph Laplacian, and consequently, its own eigenbasis. This means that molecular conformers are embedded in non-aligned spectral coordinates across different samples. To apply simulation techniques (e.g., diffusion or SB in coefficient space), one would ideally need a shared basis across the dataset—but aligning or transferring conformers between mismatched bases is fundamentally ill-posed or at least highly nontrivial.</p>
 
 <p>One workaround is to embed all molecules into a fixed-size global basis (e.g., using graph matching or kernelized embeddings), but such methods risk losing molecule-specific structural information. This highlights a tension: while infinite-dimensional modeling leverages smoothness and resolution-free behavior, its assumptions clash with the heterogeneity of molecular graph structures. Bridging this gap—through universal spectral embeddings, learned graph bases, or implicit function representations—remains a crucial open challenge for scalable and generalizable molecular generative models.</p>
 
@@ -167,7 +164,7 @@ and the model maps \(\phi(p)\) to a 3D coordinate. This enables continuous evalu
 
 <p>Function-space generative modeling provides a powerful and principled framework for modeling structured data, enabling resolution-free, smooth, and domain-aware generation. By casting data as continuous functions over space or graphs, these models unify interpolation, uncertainty quantification, and conditioning into a single representation. This approach has shown strong potential across regular domains like images and continuous time-series, and more recently, irregular domains like molecular graphs.</p>
 
-<p>However, applying infinite-dimensional Schr”odinger Bridge (SB) formulations to molecular conformer generation introduces unique challenges due to the graph-specific spectral decompositions. Unlike regular grids, molecular graphs do not share a common coordinate system, making model transferability and simulation coherence nontrivial. Recent works such as \citet{wang2024swallowing} and \citet{lee2024disco} have made substantial progress by exploiting informative priors and leveraging interpolable eigenfunctions, but general-purpose, scalable solutions remain elusive.</p>
+<p>However, applying infinite-dimensional Schr”odinger Bridge (SB) formulations to molecular conformer generation introduces unique challenges due to the graph-specific spectral decompositions. Unlike regular grids, molecular graphs do not share a common coordinate system, making model transferability and simulation coherence nontrivial. Recent works such as <d-cite key="wang2024swallowing"></d-cite>  and <d-cite key="lee2024disco"></d-cite>  have made substantial progress by exploiting informative priors and leveraging interpolable eigenfunctions, but general-purpose, scalable solutions remain elusive.</p>
 
 <p>Going forward, overcoming the mismatch of graph-specific eigenbases, incorporating physical constraints like bond flexibility or quantum observables, and developing architectures that natively handle variable graph topologies will be key. Combining these insights with the expressive power of SB and function-space modeling could lead to a new generation of molecular generative models that are not only accurate, but also chemically meaningful, generalizable, and physically grounded.</p>]]></content><author><name>Byoungwoo Park</name></author><summary type="html"><![CDATA[Function-space generative modeling offers a resolution-free and geometrically flexible approach to data generation by treating data as infinite-dimensional functions rather than fixed-dimensional vectors. When applied to molecular conformer generation, this framework enables modeling of 3D molecular structures as smooth fields over graph domains. Recent advances have extended diffusion and Schrödinger Bridge (SB) models into function space, allowing principled interpolation between data distributions. Notably, these methods support unpaired generation and conditioning on informative priors—e.g., initializing with RDKit geometries—improving sample quality in structured domains. However, molecules pose unique challenges due to their graph-specific Laplacians, which yield distinct eigenbases for each sample, complicating coherent simulation and transfer. This work outlines the theoretical foundation of infinite-dimensional SDEs, highlights recent progress in function-space molecular generation, and identifies key limitations and future directions—particularly the need for shared or learnable spectral embeddings to enable scalable and generalizable SB-based generative models for molecules.]]></summary></entry><entry><title type="html">AI810 Blog Post (20238188)</title><link href="https://bw-park.github.io/2025/05/30/geo.html" rel="alternate" type="text/html" title="AI810 Blog Post (20238188)" /><published>2025-05-30T15:12:00+00:00</published><updated>2025-05-30T15:12:00+00:00</updated><id>https://bw-park.github.io/2025/05/30/geo</id><content type="html" xml:base="https://bw-park.github.io/2025/05/30/geo.html"><![CDATA[<d-contents>
 
