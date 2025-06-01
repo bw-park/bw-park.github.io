@@ -8,9 +8,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Generative Modeling by Estimating Gradients of the Data Distribution | Byoungwoo Park</title>
+    <title>1 | Byoungwoo Park</title>
     <meta name="author" content="Byoungwoo  Park">
-    <meta name="description" content="This blog post focuses on a promising new direction for generative modeling. We can learn score functions (gradients of log probability density functions) on a large number of noise-perturbed data distributions, then generate samples with Langevin-type sampling. The resulting generative models, often called &lt;em&gt;score-based generative models&lt;/em&gt;, has several important advantages over existing model families: GAN-level sample quality without adversarial training, flexible model architectures, exact log-likelihood computation, and inverse problem solving without re-training models. In this blog post, we will show you in more detail the intuition, basic concepts, and potential applications of score-based generative models.">
+    <meta name="description" content="1">
     <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website">
 
 
@@ -71,16 +71,16 @@
   <body>
 <d-front-matter>
     <script async type="text/json">{
-      "title": "Generative Modeling by Estimating Gradients of the Data Distribution",
-      "description": "This blog post focuses on a promising new direction for generative modeling. We can learn score functions (gradients of log probability density functions) on a large number of noise-perturbed data distributions, then generate samples with Langevin-type sampling. The resulting generative models, often called <em>score-based generative models</em>, has several important advantages over existing model families: GAN-level sample quality without adversarial training, flexible model architectures, exact log-likelihood computation, and inverse problem solving without re-training models. In this blog post, we will show you in more detail the intuition, basic concepts, and potential applications of score-based generative models.",
+      "title": "1",
+      "description": "1",
       "published": "May 5, 2021",
       "authors": [
         {
-          "author": "Yang Song",
+          "author": "Byoungwoo Park",
           "authorURL": "",
           "affiliations": [
             {
-              "name": "Stanford University",
+              "name": "KAIST",
               "url": ""
             }
           ]
@@ -160,8 +160,8 @@
     <div class="post distill">
 
       <d-title>
-        <h1>Generative Modeling by Estimating Gradients of the Data Distribution</h1>
-        <p>This blog post focuses on a promising new direction for generative modeling. We can learn score functions (gradients of log probability density functions) on a large number of noise-perturbed data distributions, then generate samples with Langevin-type sampling. The resulting generative models, often called <em>score-based generative models</em>, has several important advantages over existing model families: GAN-level sample quality without adversarial training, flexible model architectures, exact log-likelihood computation, and inverse problem solving without re-training models. In this blog post, we will show you in more detail the intuition, basic concepts, and potential applications of score-based generative models.</p>
+        <h1>1</h1>
+        <p>1</p>
       </d-title>
 
       <d-byline></d-byline>
@@ -717,38 +717,6 @@ Although ODE solvers may be more efficient, numerical SDE solvers still have the
 \end{equation}\]
 
 <p>Through score matching, we can train a model to estimate the score function of the unconditional data distribution, i.e., \(\mathbf{s}_\theta(\mathbf{x}) \approx \nabla_\mathbf{x} \log p(\mathbf{x})\). This will allow us to easily compute the posterior score function \(\nabla_\mathbf{x} \log p(\mathbf{x} \mid \mathbf{y})\) from the known forward process \(p(\mathbf{y} \mid \mathbf{x})\) via equation \eqref{inverse_problem}, and sample from it with Langevin-type sampling <d-cite key="song2021scorebased"></d-cite>.</p>
-
-<!--
-However, we know that score-based generative models work best when trained on a sequence of noise-perturbed data distributions. How can we solve inverse problems when perturbing data with an SDE and training time-dependent score-based models? With a perturbation SDE, we can first convert the posterior distribution $$p(\mathbf{x} \mid \mathbf{y}) $$ to a known noise distribution $$p_T(\mathbf{x})$$ by setting $$p_0(\mathbf{x}) = p(\mathbf{x} \mid \mathbf{y})$$, and then reverse the stochastic process to convert a sample from the noise distribution $$\mathbf{x}(T) \sim p_T(\mathbf{x})$$ to a sample from the posterior distribution $$\mathbf{x}(0) \sim p_0(\mathbf{x}) = p(\mathbf{x} \mid \mathbf{y})$$. This procedure is illustrated below:
-
-<div class="l-body">
-  <img class="img-fluid rounded z-depth-1 center" src="/assets/img/score/controllable_gen.png" style="display: block; margin-left: auto; margin-right: auto;">
-  <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px;"> We perturb the posterior distribution to a noise prior with an SDE, and then reverse it to sample from the posterior distribution, thereby solving the inverse problem. </figcaption>
-</div>
-
-The reverse stochastic process is described by a **conditional reverse-time SDE** <d-cite key="song2021scorebased"></d-cite>:
-
-$$
-\begin{equation}
-\mathrm{d} \mathbf{x} = [\mathbf{f}(\mathbf{x}, t) - g^2(t) \nabla_\mathbf{x} \log p_t(\mathbf{y} \mid \mathbf{x})] \mathrm{d} t + g(t) \mathrm{d} \mathbf{w}.
-\end{equation}
-$$
-
-With the Bayes' rule for score functions, we can rewrite $$\nabla_\mathbf{x} \log p_t(\mathbf{x} \mid \mathbf{y})$$ as below
-
-$$
-\begin{equation}
-\nabla_\mathbf{x} \log p_t(\mathbf{x} \mid \mathbf{y}) = \nabla_\mathbf{x} \log p_t(\mathbf{x}) + \nabla_\mathbf{x} \log p_t(\mathbf{y} \mid \mathbf{x}).
-\end{equation}
-$$
-
-Here the first term is an unconditional time-dependent score function, which can be approximated by our time-dependent score-based model since $$\mathbf{s}_\theta(\mathbf{x}, t) \approx \nabla_\mathbf{x} \log p_t(\mathbf{x})$$. The second term $$\nabla_\mathbf{x} \log p_t(\mathbf{y} \mid \mathbf{x})$$ can often be obtained in two ways:
-* Training a separate model. Since we know the forward process $$p(\mathbf{y} \mid \mathbf{x})$$, and we have training data from the data distribution $$\{\mathbf{x}_1, \mathbf{x}_2, \cdots, \mathbf{x}_N\} \stackrel{\text{i.i.d.}}{\sim} p_0(\mathbf{x})$$, we can generate samples $$\{ (\mathbf{x}_1, y_1), \cdots, (\mathbf{x}_N, y_N) \} \stackrel{\text{i.i.d.}}{\sim} p_0(\mathbf{x}) p(\mathbf{y} \mid \mathbf{x})$$. From our forward SDE, we also know how to perturb any clean data sample $$\mathbf{x}_i$$ to a noisy one $$\mathbf{x}_i(t) \sim p_t(\mathbf{x} \mid \mathbf{x}_i)$$. This means we can easily get samples $$\{ (\mathbf{x}_1(t), y_1), \cdots, (\mathbf{x}_N(t), y_N) \} \stackrel{\text{i.i.d.}}{\sim} p_t(\mathbf{x}) p_t(\mathbf{y} \mid \mathbf{x})$$ for any $$t$$, and use them to a train a model for $$p_t(\mathbf{y} \mid \mathbf{x})$$. One application of this approach is class-conditional image generation, where $$\mathbf{y}$$ represents a target class label. We can train a noise-conditional classifier $$q_\phi(\mathbf{y}, \mathbf{x}, t) \approx p_t(\mathbf{y} \mid \mathbf{x})$$ based on pairs of noise-perturbed images and the corresponding class label, and combine it with an unconditionally trained time-dependent score-based model $$\mathbf{s}_\theta(\mathbf{x}, t)$$ for conditional sample generation.
-
-
-* Specified with domain knowledge. When the forward process is a linear model, i.e., $$p(\mathbf{y} \mid \mathbf{x}) = \delta(\mathbf{y} = M \mathbf{x})$$, where $$M$$ is a linear operator and $$\delta(\cdot)$$ represents a point mass, it is often possible to directly specify an approximation to $$\nabla_\mathbf{x} \log p_t(\mathbf{y} \mid \mathbf{x})$$. There are many examples of linear forward problems, including image inpainting and colorization. Please find a general approach to specify $$\nabla_\mathbf{x} \log p_t(\mathbf{y} \mid \mathbf{x})$$ for linear inverse problems in Appendix I.4 of ref.<d-cite key="song2021scorebased"></d-cite>, or ref.<d-cite key="kadkhodaie2020solving"></d-cite>.
-
--->
 
 <p>A recent work from UT Austin <d-cite key="jalal2021robust"></d-cite> has demonstrated that score-based generative models can be applied to solving inverse problems in medical imaging, such as accelerating magnetic resonance imaging (MRI). Concurrently in <d-cite key="song2022solving"></d-cite>, we demonstrated superior performance of score-based generative models not only on accelerated MRI, but also sparse-view computed tomography (CT). We were able to achieve comparable or even better performance than supervised or unrolled deep learning approaches, while being more robust to different measurement processes at test time.</p>
 
