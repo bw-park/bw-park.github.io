@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://bw-park.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bw-park.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-01T09:00:29+00:00</updated><id>https://bw-park.github.io/feed.xml</id><title type="html">Byoungwoo Park</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://bw-park.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bw-park.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-01T09:01:30+00:00</updated><id>https://bw-park.github.io/feed.xml</id><title type="html">Byoungwoo Park</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">AI810 Blog Post (20243313)</title><link href="https://bw-park.github.io/2025/05/30/FSB.html" rel="alternate" type="text/html" title="AI810 Blog Post (20243313)" /><published>2025-05-30T15:12:00+00:00</published><updated>2025-05-30T15:12:00+00:00</updated><id>https://bw-park.github.io/2025/05/30/FSB</id><content type="html" xml:base="https://bw-park.github.io/2025/05/30/FSB.html"><![CDATA[<d-contents>
 
   <nav class="l-text figcaption">
   <h3>Contents</h3>
     <div><a href="#introduction"> Introduction </a></div>
-    <div><a href="#infinite-dimensional SDEs">Infinite-dimensional SDEs</a></div>
-    <div><a href="#infinite-dimensional Diffusion Models">Infinite-dimensional Diffusion Models</a></div>
-    <div><a href="#infinite-Dimensional Molecule Conformal Generation">Infinite-Dimensional Molecule Conformal Generation</a></div>
+    <div><a href="#infinite-dimensional sdes">Infinite-dimensional SDEs</a></div>
+    <div><a href="#infinite-dimensional diffusion models">Infinite-dimensional Diffusion Models</a></div>
+    <div><a href="#infinite-Dimensional molecule conformal generation">Infinite-Dimensional Molecule Conformal Generation</a></div>
     <div><a href="#concluding-remarks">Concluding remarks</a></div>      
   </nav>
 </d-contents>
@@ -116,6 +116,17 @@ the observed resolution. </figcaption>
 
 <p>Recent work by<d-cite key="wang2024swallowing"></d-cite>introduces a principled framework for molecular conformer generation in function space by leveraging spectral methods defined over molecular graphs. The key insight is that a molecular conformer—the 3D arrangement of atoms in a molecule—can be represented as a smooth function over the molecular graph.</p>
 
+<div class="row l-body">
+	<div class="col-sm">
+	  <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/traj_drugs.gif" />
+   <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px;"> Drug generation Traj<d-cite key="wang2024swallowing"></d-cite>. </figcaption>
+	</div>
+	<div class="col-sm">
+  <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/traj_xl.gif" />
+   <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px">Drug generation Traj<d-cite key="wang2024swallowing"></d-cite>. </figcaption>
+  </div>
+</div>
+
 <table>
   <tbody>
     <tr>
@@ -141,17 +152,6 @@ the observed resolution. </figcaption>
 \end{equation}\]
 
 <p>where each coefficient $c_k$ captures the projection of the molecular geometry onto the $k$-th graph harmonic. This decomposition allows modeling conformers in the frequency domain rather than Cartesian coordinates. This spectral parameterization enables generative models to operate on coefficients \({c_k}\), which typically exhibit spatial smoothness and decay, allowing for compact representations. Furthermore, the conformer can be generated in function space via a diffusion process over these coefficients. This formulation enables the application of infinite-dimensional generative models and Schrödinger Bridge methods in graph-based domains. Importantly, since the graph Laplacian is molecule-specific, each sample is embedded in its own basis. Addressing this heterogeneity remains a key challenge for extending function-space models to general molecular datasets.</p>
-
-<div class="row l-body">
-	<div class="col-sm">
-	  <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/traj_drugs.gif" />
-   <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px;"> Drug generation Traj<d-cite key="wang2024swallowing"></d-cite>. </figcaption>
-	</div>
-	<div class="col-sm">
-  <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/traj_xl.gif" />
-   <figcaption style="text-align: center; margin-top: 10px; margin-bottom: 10px">Drug generation Traj<d-cite key="wang2024swallowing"></d-cite>. </figcaption>
-  </div>
-</div>
 
 <p><strong>SB with informative priors and continuous conformers.</strong>
  The Schr”odinger Bridge (SB). framework allows generation from an initial distribution to a target distribution while remaining close to a reference process. Traditionally, generative models using SB or diffusion start from pure noise; however, this may be suboptimal in structured domains like molecular conformers. A more informative prior can improve generation quality and convergence. For instance, <d-cite key="lee2024disco"></d-cite> initialize the generation with conformers produced by RDKit, enabling a guided generation path that improves sample quality and optimization. This strategy suggests that SB methods can generalize such priors in a principled way, bridging between known or heuristically sampled initial configurations and optimized final geometries.</p>
