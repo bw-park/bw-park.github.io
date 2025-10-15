@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Master student @ KAIST
+subtitle: Visiting Scholar @ Georgia Tech | Master student @ KAIST
 profile:
   align: right
   image: bwpark.jpg
@@ -15,7 +15,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page 
 ---
 
-I am visiting scholar at Georgia Tech working with [Yongxin Chen](https://yongxin.ae.gatech.edu/) and Master Student at KAIST advised by Professor [Juho Lee](https://juho-lee.github.io/). My primary **research interests** are in generative models, state space models, and variational inference utilizing **stochastic optimal control**, with the goal of developing practical applications grounded in a rigorous theoretical understanding.
+I am visiting scholar at Georgia Tech working with [Yongxin Chen](https://yongxin.ae.gatech.edu/) and Master Student at KAIST advised by [Juho Lee](https://juho-lee.github.io/). My primary **research interests** are in generative models, state space models, and variational inference utilizing **stochastic optimal control**, with the goal of developing practical applications grounded in a rigorous theoretical understanding.
 
 <strong>Contact: </strong>
       bw.park [at] kaist [dot] ac [dot] kr
