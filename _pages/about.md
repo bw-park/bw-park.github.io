@@ -27,5 +27,5 @@ I am visiting scholar at Georgia Tech working with [Yongxin Chen](https://yongxi
       <strong> | </strong>
       <a href="https://github.com/bw-park" target="_blank" title="GitHub"><i class="fab fa-github"></i> bw-park</a>
       <strong> | </strong>
-      <a href="https://x.com/bw__park" target="_blank" title="GitHub"<i class="fa-brands fa-square-twitter"></i> @bw__park</a>
+      <a href="https://x.com/bw__park" target="_blank" title="GitHub"><i class="fa-brands fa-square-twitter"></i> @bw__park</a>
 <br><br>
