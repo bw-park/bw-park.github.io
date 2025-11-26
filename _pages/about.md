@@ -15,7 +15,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page 
 ---
 
-I am an incoming PhD student at KAIST advised by [Juho Lee](https://juho-lee.github.io/). I am also fortunate to be a visiting scholar at Georgia Tech, working with and advised by [Yongxin Chen](https://yongxin.ae.gatech.edu/), and collaborating with and being mentored by [Guan-Horng Liu](https://ghliu.github.io/).
+I am an incoming PhD student at KAIST advised by [Juho Lee](https://juho-lee.github.io/). I am also fortunate to be a visiting scholar at Georgia Tech, working closely with [Yongxin Chen](https://yongxin.ae.gatech.edu/), and being mentored by [Guan-Horng Liu](https://ghliu.github.io/).
 
 My primary **research interests** are in **GenAI** and **AI4Science**, focusing on developing theoretically sound yet practical methods inspired by dynamic optimal transport, stochastic optimal control. My research covers 
 <a href="https://arxiv.org/abs/2405.20630" target="_blank">unpaired image translation</a>, 
