@@ -15,7 +15,16 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page 
 ---
 
-I am visiting scholar at Georgia Tech working with [Yongxin Chen](https://yongxin.ae.gatech.edu/) and Master Student at KAIST advised by [Juho Lee](https://juho-lee.github.io/). My primary **research interests** are in generative models, state space models, and variational inference utilizing **stochastic optimal control**, with the goal of developing practical applications grounded in a rigorous theoretical understanding.
+I am Master (and incoming Phd) Student at KAIST advised by [Juho Lee](https://juho-lee.github.io/). I am also fortunate to be a visiting scholar at Georgia Tech, working with and advised by [Yongxin Chen](https://yongxin.ae.gatech.edu/), and to collaborate with and be mentored by [Guan-Horng Liu](https://ghliu.github.io/). 
+
+
+My primary **research interests** are in **GenAI** and **AI4Science**, with a particular focus on integrating optimality structures into diffusion models to develop practical applications grounded in rigorous theory. Building on the study of fundamental principles in dynamic optimal transport, stochastic optimal control, and statistical physics, I develop methods applied to 
+<a href="https://arxiv.org/abs/2405.20630" target="_blank">unpaired image translation</a>,
+<a href="https://arxiv.org/abs/2410.05602" target="_blank">time series modeling</a>, 
+<a href="https://arxiv.org/abs/2502.04892" target="_blank">fMRI representation learning</a>, 
+<a href="https://arxiv.org/abs/2510.16587" target="_blank">single-cell RNA sequencing</a>, and 
+<a href="https://arxiv.org/abs/2511.06239" target="_blank">transition path sampling</a>.
+
 
 <strong>Contact: </strong>
       bw.park [at] kaist [dot] ac [dot] kr
@@ -27,5 +36,5 @@ I am visiting scholar at Georgia Tech working with [Yongxin Chen](https://yongxi
       <strong> | </strong>
       <a href="https://github.com/bw-park" target="_blank" title="GitHub"><i class="fab fa-github"></i> bw-park</a>
       <strong> | </strong>
-      <a href="https://x.com/bw__park" target="_blank" title="GitHub"><i class="fab fa-twitter"></i> @bw__park</a>
+      <a href="https://x.com/bw__park" target="_blank" title="GitHub"> 𝕏 @bw__park</a>
 <br><br>
