@@ -630,6 +630,13 @@ footer.sticky-bottom {
   color: var(--global-text-color);
   border-bottom: 1px dashed var(--global-text-color);
 }
+.publications ol.bibliography li .periodical {
+  font-size: 1rem;
+  color: #727272;
+}
+.publications ol.bibliography li .periodical > em {
+  color: var(--global-text-color);
+}
 .publications ol.bibliography li .links a.btn {
   color: var(--global-text-color);
   border: 1px solid var(--global-text-color);
