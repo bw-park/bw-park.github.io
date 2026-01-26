@@ -658,10 +658,10 @@ footer.sticky-bottom {
         font-size: 1rem;
         color: #727272;
         > em {
-          color: $custom-color-blue;
+          color: var(--global-text-color);
         }
       }
-      
+
       .links {
         a.btn {
           color: var(--global-text-color);
