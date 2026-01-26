@@ -587,6 +587,7 @@ footer.sticky-bottom {
       .abbr {
         height: 2rem;
         margin-bottom: 0.5rem;
+        font-size: 1.25rem; /* This is the badge font size */
         abbr {
           display: inline-block;
           background-color: var(--global-theme-color);
@@ -603,8 +604,10 @@ footer.sticky-bottom {
         }
 
         .award {
+          font-size: 0.9rem;
           color: var(--global-theme-color) !important;
           border: 1px solid var(--global-theme-color);
+          font-weight: bold;
         }
       }
       
@@ -614,7 +617,8 @@ footer.sticky-bottom {
       }      
 
       .title {
-        font-weight: bolder;
+        font-weight: 500;
+        font-size: 1.1rem;
       }
 
       .author {
@@ -630,6 +634,8 @@ footer.sticky-bottom {
         >em {
           border-bottom: 1px solid;
           font-style: normal;
+          color: var(--global-theme-color);
+          font-weight: 400;
         }
 
         >span.more-authors {
@@ -677,7 +683,7 @@ footer.sticky-bottom {
       }
 
       .hidden {
-        font-size: 0.875rem;
+        font-size: 0.9rem;
         max-height: 0px;
         overflow: hidden;
         text-align: justify;
