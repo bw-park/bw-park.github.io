@@ -68,6 +68,10 @@ layout: default
           <!-- Selected papers -->
           {% if page.selected_papers -%}
             <h2><a href="{{ '/publications/' | relative_url }}" style="color: inherit;">selected publications</a></h2>
+            <p class="selected-pubs-subtitle">(*) denotes equal contribution, (<sup>‡</sup>) denotes equal advising.</p>
+            <p class="selected-pubs-subtitle">
+              See <a href="{{ '/publications/' | relative_url }}">publications</a> for the full list.
+            </p>
             {%- include selected_papers.html %}
           {%- endif %}
 
