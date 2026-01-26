@@ -112,11 +112,13 @@
         {% if entry.type == "article" -%}
         {%- capture entrytype -%}
           <span class="periodical">{{ entry.journal }}</span>
-          {%- if entry.honor != "" -%}
-          <br><span class="honor">{{entry.honor}}</span>
+          {%- assign honor = entry.honor | strip -%}
+          {%- if honor != "" -%}
+          <br><span class="honor">{{honor}}</span>
           {%- endif -%}
-          {%- if entry.journal_1 != "" -%}
-          <br><span class="periodical">{{ entry.journal_1 }}</span>
+          {%- assign journal_1 = entry.journal_1 | strip -%}
+          {%- if journal_1 != "" -%}
+          <br><span class="periodical">{{journal_1}}</span>
           {%- endif -%}
         {%- endcapture -%}
         {%- elsif proceedings contains entry.type -%}
