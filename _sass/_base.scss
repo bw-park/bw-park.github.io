@@ -2,14 +2,6 @@
  * Styles for the base elements of the theme.
  ******************************************************************************/
 
-// body {
-//   font-family: IBM Plex Sans, sans-serif;
-//   padding-bottom: 50px;
-//   font-size: 100%;
-//   line-height: 1.3em;
-//   letter-spacing: -0.15pt;
-// }
-
 // Typography
 
 p,
@@ -595,7 +587,6 @@ footer.sticky-bottom {
       .abbr {
         height: 2rem;
         margin-bottom: 0.5rem;
-        font-size: 1.25rem; /* This is the badge font size */
         abbr {
           display: inline-block;
           background-color: var(--global-theme-color);
@@ -612,10 +603,8 @@ footer.sticky-bottom {
         }
 
         .award {
-          font-size: 0.9rem;
           color: var(--global-theme-color) !important;
           border: 1px solid var(--global-theme-color);
-          font-weight: bold;
         }
       }
       
@@ -625,15 +614,12 @@ footer.sticky-bottom {
       }      
 
       .title {
-        font-weight: 500;
-        font-size: 0.9rem;
+        font-weight: bolder;
       }
 
       .author {
-        font-size: 1.0rem;
         a {
-          // border-bottom: 1px dashed var(--global-theme-color);
-          border-bottom: none;
+          border-bottom: 1px dashed var(--global-theme-color);
 
           &:hover {
             border-bottom-style: solid;
@@ -642,11 +628,8 @@ footer.sticky-bottom {
         }
 
         >em {
-          // border-bottom: # 1px solid;
-          border-bottom: none;
+          border-bottom: 1px solid;
           font-style: normal;
-          color: var(--global-theme-color);
-          font-weight: 400;
         }
 
         >span.more-authors {
@@ -661,16 +644,7 @@ footer.sticky-bottom {
         }
       }
 
-      .periodical{
-        font-size: 1rem;
-        color: #727272;
-        > em {
-          color: $custom-color-blue;
-        }
-      }
-
       .links {
-        font-size: 1rem;
         a.btn {
           color: var(--global-text-color);
           border: 1px solid var(--global-text-color);
@@ -703,7 +677,7 @@ footer.sticky-bottom {
       }
 
       .hidden {
-        font-size: 0.9rem;
+        font-size: 0.875rem;
         max-height: 0px;
         overflow: hidden;
         text-align: justify;
