@@ -654,6 +654,14 @@ footer.sticky-bottom {
         }
       }
 
+      .periodical{
+        font-size: 1rem;
+        color: #727272;
+        > em {
+          color: $custom-color-blue;
+        }
+      }
+      
       .links {
         a.btn {
           color: var(--global-text-color);

@@ -111,14 +111,13 @@
         {% assign thesis = "thesis,mastersthesis,phdthesis" | split: ','%}
         {% if entry.type == "article" -%}
         {%- capture entrytype -%}
-          <em>{{ entry.journal }}</em>
-          {%- if entry.honor != "" -%}<br><em>
-          <span class="honor">
-            {{entry.honor}}
-          </span>
-          </em>
+          <span class="periodical">{{ entry.journal }}</span>
+          {%- if entry.honor != "" -%}
+          <span class="honor">{{entry.honor}}</span>
           {%- endif -%}
-          {%- if entry.journal_1 != "" -%}<br><em>{{ entry.journal_1 }}</em>{%- endif -%}
+          {%- if entry.journal_1 != "" -%}
+          <br><span class="periodical">{{ entry.journal_1 }}</span>
+          {%- endif -%}
         {%- endcapture -%}
         {%- elsif proceedings contains entry.type -%}
           {%- capture entrytype -%} <em>In {{entry.booktitle}} </em>  {%- endcapture -%}
