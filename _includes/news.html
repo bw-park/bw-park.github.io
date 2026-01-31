@@ -1,29 +1,21 @@
-          <div class="news">
-            {% if site.news != blank -%}
-            {%- assign news_size = site.news | size -%}
-            <div class="table-responsive" {% if include.limit and site.announcements.scrollable and news_size > 3 %}style="max-height: 60vw"{% endif %}>
-              <table class="table table-sm table-borderless">
-              {%- assign news = site.news | reverse -%}
-              {% if include.limit and site.announcements.limit %}
-              {% assign news_limit = site.announcements.limit %}
-              {% else %}
-              {% assign news_limit = news_size %}
-              {% endif %}
-              {% for item in news limit: news_limit %}
-                <tr>
-                  <th scope="row">{{ item.date | date: "%b %-d, %Y" }}</th>
-                  <td>
-                    {% if item.inline -%}
-                      {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
-                    {%- else -%}
-                      <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-                    {%- endif %}
-                  </td>
-                </tr>
-              {%- endfor %}
-              </table>
-            </div>
-          {%- else -%}
-            <p>No news so far...</p>
-          {%- endif %}
-          </div>
+<div class="news">
+  <h5 style="text-align: center; font-size: 150%; font-weight: 600; padding: 10px 0 10px 0;">Updates</h5>
+  <div class="table-responsive">
+    <table class="table table-sm table-borderless">
+      <tr><td style="padding-top: 0rem; padding: 0 0 0 0;">
+        [01/2026] <a href="https://arxiv.org/abs/2502.04892" target="_blank">BDO</a> accepted to ICLR 2026.
+      </td></tr>
+      <tr><td style="padding-top: 0rem; padding: 0 0 0 0;">
+        [09/2025] <a href="https://openreview.net/forum?id=0aqslPPVPM" target="_blank">FAS</a> and
+        <a href="https://arxiv.org/abs/2507.02315" target="_blank">Self-distilled TSMC</a>,
+        accepted to FPI@NeurIPS 2025 and received the AITHYRA Travel Grant.
+      </td></tr>
+      <tr><td style="padding-top: 0rem; padding: 0 0 0 0;">
+        [02/2025] <a href="https://arxiv.org/abs/2410.05602" target="_blank">ACSSM</a> accepted to ICLR 2025 (Oral 1.8%)
+      </td></tr>
+      <tr><td style="padding-top: 0rem; padding: 0 0 0 0;">
+        [10/2024] <a href="https://arxiv.org/abs/2405.20630" target="_blank">DBFS</a> accepted to NeurIPS 2024 and received the NeurIPS 2024 Scholar Award.
+      </td></tr>
+    </table>
+  </div>
+</div>
