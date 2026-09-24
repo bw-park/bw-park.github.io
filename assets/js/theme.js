@@ -89,4 +89,5 @@ let initTheme = (theme) => {
 }
 
 
-initTheme(localStorage.getItem("theme"));
+// Site is locked to dark mode.
+initTheme("dark");
