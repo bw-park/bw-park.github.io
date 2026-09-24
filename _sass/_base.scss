@@ -23,6 +23,28 @@ hr {
   border-top: 1px solid var(--global-divider-color);
 }
 
+// Home/about section headers ("news", "selected publications", ...) get a
+// sage-green underline accent so the secondary color is clearly visible.
+.post article > h2 {
+  display: inline-block;
+  padding-bottom: 0.15rem;
+  border-bottom: 3px solid var(--global-accent-secondary);
+}
+
+// Reusable purple "Oral / award" pill badge (used in news + publications).
+.honor-badge {
+  display: inline-block;
+  padding: 0.05rem 0.5rem;
+  border-radius: 0.5rem;
+  background-color: rgba($purple-color, 0.13);
+  color: var(--global-theme-color);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
 table {
   td,
   th {
@@ -39,7 +61,7 @@ table.table a {
   color: var(--global-theme-color);
 
   &:hover {
-    color: var(--global-theme-color);
+    color: var(--global-accent-secondary);
     text-decoration: underline;
   }
 
@@ -59,7 +81,7 @@ img {
 
 blockquote {
   background: var(--global-bg-color);
-  border-left: 2px solid var(--global-theme-color);
+  border-left: 2px solid var(--global-accent-secondary);
   margin: 1.5em 10px;
   padding: 0.5em 10px;
   font-size: 1.2rem;
@@ -621,16 +643,31 @@ footer.sticky-bottom {
         }
       }
       
+      .venue-honor {
+        white-space: nowrap;
+      }
+
       .honor {
-        color: var(--global-theme-color);      
-        font-weight: bolder;
-      }      
+        display: inline-block;
+        margin-left: 0.45rem;
+        padding: 0.05rem 0.5rem;
+        border-radius: 0.5rem;
+        background-color: rgba($purple-color, 0.13);
+        color: var(--global-theme-color);
+        font-weight: 700;
+        font-size: 0.75rem;
+        line-height: 1.4;
+        letter-spacing: 0.01em;
+        vertical-align: middle;
+      }
 
       .title {
         font-weight: bolder;
       }
 
       .author {
+        font-size: 0.9rem;
+
         a {
           // border-bottom: 1px dashed var(--global-theme-color);
           border-bottom: none;

@@ -120,10 +120,11 @@
         {% assign thesis = "thesis,mastersthesis,phdthesis" | split: ','%}
         {% if entry.type == "article" -%}
         {%- capture entrytype -%}
-          <span class="periodical">{{ entry.journal }}</span>
           {%- assign honor = entry.honor | strip -%}
           {%- if honor != "" -%}
-          <br><span class="honor">{{honor}}</span>
+          <span class="venue-honor"><span class="periodical">{{ entry.journal }}</span>{{ " " }}<span class="honor">{{honor}}</span></span>
+          {%- else -%}
+          <span class="periodical">{{ entry.journal }}</span>
           {%- endif -%}
           {%- assign journal_1 = entry.journal_1 | strip -%}
           {%- if journal_1 != "" -%}

@@ -17,8 +17,11 @@ $green-color-lime:    #B7D12A !default;
 $green-color-dark:    #009f06 !default;
 $green-color-light:   #ddffdd !default;
 $green-color-bright:  #11D68B !default;
-$purple-color:        #B509AC !default;
+$purple-color:        #4E2A96 !default;
 $light-purple-color:  lighten($purple-color, 25%);
+// Secondary accent (neutral grey)
+$sage-color:          #8A8A8F !default;
+$light-sage-color:    #E2E2E5 !default;
 $pink-color:          #f92080 !default;
 $pink-color-light:    #ffdddd !default;
 $yellow-color:        #efcc00 !default;

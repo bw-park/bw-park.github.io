@@ -15,7 +15,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page 
 ---
 
-Hi! I am an PhD student at KAIST advised by [Juho Lee](https://juho-lee.github.io/). I am currently visiting scholar at NYU.
+Hi! I am a PhD student at KAIST advised by [Juho Lee](https://juho-lee.github.io/). I am currently visiting scholar at NYU.
 Previously, I was visiting scholar at Georgia Tech, where I worked with [Yongxin Chen](https://yongxin.ae.gatech.edu/). Before that, I worked with [Guan-Horng Liu](https://ghliu.github.io/).
 
 
