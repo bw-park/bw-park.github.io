@@ -15,9 +15,15 @@ group :jekyll_plugins do
     gem 'jekyll-toc'
     gem 'jekyll-twitter-plugin'
     gem 'jemoji'
-    gem 'mini_racer'
+    gem 'mini_racer', require: false
     gem 'unicode_utils'
     gem 'webrick'
+    # stdlib gems no longer bundled by default in Ruby 3.4+/4.0
+    gem 'ostruct'
+    gem 'csv'
+    gem 'base64'
+    gem 'bigdecimal'
+    gem 'logger'
 end
 group :other_plugins do
     gem 'feedjira'

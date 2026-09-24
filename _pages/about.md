@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Visiting Scholar @ Georgia Tech | PhD student @ KAIST
+subtitle: Visiting Scholar @ NYU | PhD student @ KAIST
 profile:
   align: right
   image: bwpark.jpg
@@ -15,15 +15,12 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page 
 ---
 
-I am an PhD student at KAIST advised by [Juho Lee](https://juho-lee.github.io/). I am also fortunate to be a visiting scholar at Georgia Tech, working closely with [Yongxin Chen](https://yongxin.ae.gatech.edu/), and being mentored by [Guan-Horng Liu](https://ghliu.github.io/).
+Hi! I am an PhD student at KAIST advised by [Juho Lee](https://juho-lee.github.io/). I am currently visiting scholar at NYU.
+Previously, I was visiting scholar at Georgia Tech, where I worked with [Yongxin Chen](https://yongxin.ae.gatech.edu/). Before that, I worked with [Guan-Horng Liu](https://ghliu.github.io/).
 
-My primary **research interests** are in **GenAI** and **AI4Science**, focusing on developing theoretically sound yet practical methods inspired by dynamic optimal transport, stochastic optimal control. My research covers 
-<a href="https://arxiv.org/abs/2405.20630" target="_blank">unpaired image translation</a>, 
-<a href="https://arxiv.org/abs/2410.05602" target="_blank">time series modeling</a>, 
-<a href="https://arxiv.org/abs/2502.04892" target="_blank">fMRI representation learning</a>, 
-<a href="https://arxiv.org/abs/2510.16587" target="_blank">single-cell RNA sequencing</a>, and 
-<a href="https://arxiv.org/abs/2511.06239" target="_blank">transition path sampling</a>.
 
+I have recently developed an interest in **Physical AI and world models**, with a focus on autoregressive generation of videos.
+This interest builds on my earlier research in **GenAI** and **AI4Science**, particularly **probabilistic modeling of temporal dynamics**. In that work, I drew on dynamic optimal transport and stochastic optimal control to develop theoretically sound yet practical methods.
 
 <strong>Contact: </strong>
       bw.park [at] kaist [dot] ac [dot] kr
