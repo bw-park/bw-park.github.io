@@ -15,3 +15,5 @@ vendor
 !/assets/img/favicon.png
 !/assets/img/publication_preview/
 !/assets/img/publication_preview/*
+!/assets/pdf/
+!/assets/pdf/cv.pdf
