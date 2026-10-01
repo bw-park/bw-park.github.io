@@ -9,8 +9,9 @@ _site
 Gemfile.lock
 vendor
 
-# Include publication previews even when a parent ignore file ignores new files.
+# Include site media even when a parent ignore file ignores new files.
 !/assets/
 !/assets/img/
+!/assets/img/favicon.png
 !/assets/img/publication_preview/
 !/assets/img/publication_preview/*
